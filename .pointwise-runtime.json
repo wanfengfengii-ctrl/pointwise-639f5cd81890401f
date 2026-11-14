@@ -4,8 +4,7 @@
   "setup": [],
   "verify": [
     "python3",
-    "observe.py",
-    "verify"
+    "design_check.py"
   ],
   "demo": [
     "python3",
