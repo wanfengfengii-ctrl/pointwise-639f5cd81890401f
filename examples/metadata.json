@@ -1,0 +1,240 @@
+{
+  "sparse": {
+    "files": {
+      "f00": [
+        {
+          "reading": 0
+        },
+        {
+          "reading": 1
+        }
+      ],
+      "f01": [
+        {
+          "reading": 2
+        },
+        {
+          "reading": 3
+        }
+      ],
+      "f02": [
+        {
+          "reading": 4
+        },
+        {
+          "reading": 5
+        }
+      ],
+      "f03": [
+        {
+          "reading": 6
+        },
+        {
+          "reading": 7
+        }
+      ],
+      "f04": [
+        {
+          "reading": 8
+        },
+        {
+          "reading": 9
+        }
+      ],
+      "f05": [
+        {
+          "reading": 10
+        },
+        {
+          "reading": 11
+        }
+      ],
+      "f06": [
+        {
+          "reading": 12
+        },
+        {
+          "reading": 13
+        }
+      ],
+      "f07": [
+        {
+          "reading": 14
+        },
+        {
+          "reading": 15
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "delete",
+        "snapshot": "initial",
+        "file": "f00",
+        "pos": 0
+      },
+      {
+        "op": "delete",
+        "snapshot": "initial",
+        "file": "f01",
+        "pos": 0
+      },
+      {
+        "op": "delete",
+        "snapshot": "initial",
+        "file": "f00",
+        "pos": 0
+      },
+      {
+        "op": "rollback_delete",
+        "snapshot": "initial",
+        "file": "f02",
+        "pos": 0
+      },
+      {
+        "op": "read",
+        "snapshot": 1
+      },
+      {
+        "op": "read",
+        "snapshot": 2
+      },
+      {
+        "op": "read",
+        "snapshot": 3
+      },
+      {
+        "op": "delete",
+        "snapshot": "initial",
+        "file": "f00",
+        "pos": 99
+      }
+    ]
+  },
+  "local": {
+    "files": {
+      "f00": [
+        {
+          "reading": 0
+        },
+        {
+          "reading": 1
+        }
+      ],
+      "f01": [
+        {
+          "reading": 2
+        },
+        {
+          "reading": 3
+        }
+      ],
+      "f02": [
+        {
+          "reading": 4
+        },
+        {
+          "reading": 5
+        }
+      ],
+      "f03": [
+        {
+          "reading": 6
+        },
+        {
+          "reading": 7
+        }
+      ],
+      "f04": [
+        {
+          "reading": 8
+        },
+        {
+          "reading": 9
+        }
+      ],
+      "f05": [
+        {
+          "reading": 10
+        },
+        {
+          "reading": 11
+        }
+      ],
+      "f06": [
+        {
+          "reading": 12
+        },
+        {
+          "reading": 13
+        }
+      ],
+      "f07": [
+        {
+          "reading": 14
+        },
+        {
+          "reading": 15
+        }
+      ]
+    },
+    "operations": [
+      {
+        "op": "delete",
+        "snapshot": "initial",
+        "file": "f00",
+        "pos": 0
+      },
+      {
+        "op": "prepare",
+        "job": "local",
+        "inputs": [
+          "f00"
+        ],
+        "layout": [
+          [
+            [
+              "f00",
+              0
+            ],
+            [
+              "f00",
+              1
+            ]
+          ],
+          []
+        ]
+      },
+      {
+        "op": "publish"
+      },
+      {
+        "op": "prepare",
+        "job": "empty",
+        "inputs": [
+          "rewrite-local-1"
+        ],
+        "layout": []
+      },
+      {
+        "op": "publish"
+      },
+      {
+        "op": "read",
+        "snapshot": 1
+      },
+      {
+        "op": "read",
+        "snapshot": 2
+      },
+      {
+        "op": "read",
+        "snapshot": 3
+      },
+      {
+        "op": "read",
+        "snapshot": 4
+      }
+    ]
+  }
+}
